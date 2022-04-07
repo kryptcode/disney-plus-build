@@ -17,8 +17,6 @@ const Header = () => {
                 className='cursor-pointer'
                 onClick={() => router.push('/')} 
             />
-            {
-                session && (
                     <div className="hidden md:flex ml-10 items-center space-x-6">
                         <a className="header-link group">
                             <HomeIcon className="h-4" />
@@ -45,26 +43,11 @@ const Header = () => {
                             <span className="span">Series</span>
                         </a>
                     </div>
-                )
-            }
-
-            {
-                !session ? (
                     <button 
                         className="ml-auto uppercase border px-4 py-1.5 rounded font-medium tracking-wide hover:bg-white hover:text-black transition duration-200"
-                        onClick={() => signIn()}
                     >
                             Login
                     </button>
-                ) : (
-                    <img 
-                        src={session.user.image} 
-                        alt={session.user.name}
-                        className='ml-auto h-12 w-12 rounded-full object-cover cursor-pointer'
-                        onClick={() => signOut()}
-                    />
-                )
-            }
             
             
         </header>
